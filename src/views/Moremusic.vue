@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h2>{{title}}</h2>
         <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
             <van-list
                     v-model="loading"
@@ -22,6 +23,7 @@
     import {getBillList} from '../api/music-api'
 
     export default {
+
         name: "Moremusic",
         data() {
             return {
@@ -29,18 +31,22 @@
                 loading: false,
                 finished: false,
                 refreshing: false,
-                offset: 0
+                offset: 0,
+                title:''
             };
+        },
+        created() {
+            this.title=this.$route.params.title
         },
 
         methods: {
             onLoad() {
+
                 this.offset += 10;
                 getBillList(this.$route.params.type, 10, this.offset).then(res => {
                     console.log(res.list)
                     // this.list=res.list
-                    this.list = this.list.concat(res.list),
-                        this.refreshing = false
+                    this.list = this.list.concat(res.list), this.refreshing = false
                     this.loading = false
                 })
 
@@ -59,13 +65,15 @@
     .van-list {
         display: flex;
         flex-flow: wrap;
-        }
+    }
+
     .box {
         display: flex;
-     flex-direction: column;
+        flex-direction: column;
         width: calc(100% / 2);
         box-sizing: border-box;
         padding: 5px;
+
         img {
             width: 100%;
         }

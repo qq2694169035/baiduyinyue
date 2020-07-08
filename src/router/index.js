@@ -46,11 +46,15 @@ const routes = [
         },
             {
                 //this.$route.params.type
-                path: "more/:type",
+                path: "more/:type/:title",
                 component: () => import('../views/Moremusic.vue'),
             }
         ]
     },
+    {
+        path:"/bofang/:songId",
+        component: ()=>import('../views/bofang.vue')
+    }
 
 
 ]

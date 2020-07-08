@@ -14,5 +14,12 @@ module.exports={
                 changeOrigin: true
             },
         },
+        proxy: {
+
+            "/v1/restserver/ting": {
+                target: "http://musicapi.taihe.com",
+                changeOrigin: true
+            },
+        },
     }
 }

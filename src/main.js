@@ -29,7 +29,16 @@ import { Tab, Tabs } from 'vant';
 
 Vue.use(Tab);
 Vue.use(Tabs);
+
+import Vuex from 'vuex'
+
+Vue.use(Vuex);
+import store from './store'
+import { Icon } from 'vant';
+
+Vue.use(Icon);
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')

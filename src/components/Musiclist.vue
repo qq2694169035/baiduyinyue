@@ -16,22 +16,23 @@
 
 <script>
     import {getBillList} from '../api/music-api'
+
     export default {
         name: "Musiclist",
-        props:{
-            type:{
-                type:Number
+        props: {
+            type: {
+                type: Number
             }
         },
-        data(){
-            return{
-                list:[]
+        data() {
+            return {
+                list: []
             }
         },
         created() {
-            getBillList(this.type,4).then(res=>{
+            getBillList(this.type, 4).then(res => {
                 // console.log(res.list)
-                this.list=res.list
+                this.list = res.list
             })
         }
     }
@@ -41,26 +42,30 @@
     .music-list {
         margin-top: 10px;
 
-    li {
-        display: flex;
+        li {
+            display: flex;
 
-    .cover {
-        width: 50px;
-        flex-shrink: 0;
-        padding: 5px;
+            .cover {
+                width: 50px;
+                flex-shrink: 0;
+                padding: 5px;
 
-    img {
-        width: 100%;
-    }
+                img {
+                    width: 100%;
+                }
+            }
+                .intro {
+                    flex-grow: 1;
+                    padding: 3px 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                }
 
-    .intro {
-        flex-grow: 1;
-        padding: 3px 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        }
     }
-    }
-    }
+    .title2 {
+        font-size: 12px;
+       color:  #ccc
     }
 </style>

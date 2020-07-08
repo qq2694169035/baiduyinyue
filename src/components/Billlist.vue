@@ -1,11 +1,11 @@
 <template>
     <div class="bill-list">
-        <h3>{{title}}<router-link tag="span" :to="'/index/more/'+type" class="Bill-title">更多</router-link></h3>
+        <h3>{{title}}<router-link tag="span" :to="'/index/more/'+type+'/'+title" class="Bill-title">更多</router-link></h3>
         <ul class="bill-list-content">
-            <li v-for="i in list" :key="i.song_id">
+            <router-link tag="li" :to="'/bofang/'+i.song_id" v-for="i in list" :key="i.song_id">
                 <img :src="i.pic_big" class="icon">
                 <p class="bill-content">{{i.title}}</p>
-            </li>
+            </router-link>
         </ul>
     </div>
 </template>
@@ -35,6 +35,7 @@
         created() {
 
             getBillList(this.type,this.size).then(res=>{
+                console.log(res)
                 // debugger
                 // console.log(res.list)
                 this.list=res.list

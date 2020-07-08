@@ -1,10 +1,6 @@
 <template>
     <div class="bill-list">
-<!--        <h3>-->
-<!--            {{title}}-->
-<!--            <router-link :to="'/index/more/'+type" tag="span" class="Bill-title"> 更多</router-link>-->
 
-<!--            </h3>-->
         <h3>音乐榜单<router-link tag="span" :to="'/index/more/'+type" class="Bill-title">更多</router-link></h3>
         <van-tabs v-model="active">
             <van-tab title="热歌榜" >

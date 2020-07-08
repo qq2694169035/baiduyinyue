@@ -22,3 +22,15 @@ export function getSingerList(tinguid) {
         }
     })
 }
+
+
+
+    export function getSingerLrc(songid) {
+        const url=`/v1/restserver/ting?method=baidu.ting.song.play&songid=${songid}`;
+        return request.get(url).then(res=>{
+            return{
+                ...res,
+                list:res
+            }
+        })
+    }

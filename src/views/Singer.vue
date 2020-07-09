@@ -1,7 +1,8 @@
 <template>
     <div>
-
-        <Singerlist v-for="item in tinguid" :key="item" :tinguid="item"></Singerlist>
+        <router-link :to="'/index/Singerdetails/'+item" v-for="item in tinguid" :key="item"  >
+            <Singerlist :tinguid="item"></Singerlist>
+        </router-link>
     </div>
 </template>
 

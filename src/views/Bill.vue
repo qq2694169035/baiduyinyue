@@ -1,7 +1,6 @@
 <template>
     <div>
-
-        <BillItem v-for="item in list" :key="item" :type="item"></BillItem>
+      <router-link :to="'/details/'+item" v-for="item in list" :key="item">  <BillItem  :type="item"></BillItem></router-link>
        </div>
 </template>
 
@@ -20,6 +19,8 @@
     }
 </script>
 
-<style scoped>
-
+<style scoped lang="less">
+a{
+    color: black;
+}
 </style>

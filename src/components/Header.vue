@@ -1,8 +1,8 @@
 <template>
     <div class="header-container">
-        <van-icon name="wap-home-o" class="icon" color="red"/>
+        <router-link to="/index"><van-icon name="wap-home-o" class="icon" color="red"/></router-link>
         <span class="content">{{list.title}}</span>
-        <van-icon name="search" class="icon"/>
+        <router-link to="/index/search"><van-icon name="search" class="icon"/></router-link>
     </div>
 </template>
 

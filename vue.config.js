@@ -13,13 +13,16 @@ module.exports={
                 target: "http://tingapi.ting.baidu.com",
                 changeOrigin: true
             },
-        },
-        proxy: {
-
             "/v1/restserver/ting": {
                 target: "http://musicapi.taihe.com",
                 changeOrigin: true
             },
+            "/data/song/lrc": {
+                target: " http://music.taihe.com",
+                changeOrigin: true
+            },
         },
+
+
     }
 }

@@ -1,20 +1,45 @@
 <template>
     <div>
-<!--        {{useInfor.name}}-->
-        {{a.name}}
+
+        <input type="text" v-model="content"><button @click="search">搜索</button>
+
+        <van-tabs v-model="active">
+            <van-tab v-for="(item,index) in list" :key="index" :title="item.artistname"><Searchlist :id="item.artistname"></Searchlist></van-tab>
+
+        </van-tabs>
+
     </div>
 </template>
 
 <script>
-    import {mapState} from 'vuex'
+
+    import {getsearch} from "../api/music-api";
+    import Searchlist from "../components/Searchlist";
+
     export default {
+        components:{
+            Searchlist
+        },
         name: "search",
-        created() {
+        data(){
+            return{
+                content:"",
+                active: 2,
+                list:[]
+            }
+        },
+
+        computed:{
 
         },
-        computed:{
-            // ...mapState(['useInfor'])
-            ...mapState({a:"useInfor"})
+        methods:{
+            search(){
+                // console.log(this.content)
+                getsearch(this.content).then(res=>{
+                    // console.log(res)
+                    this.list=res.artist
+                })
+            }
         }
     }
 </script>

@@ -9,11 +9,19 @@ export default new Vuex.Store({
             name: "123",
 
         },
-        list: [1]
+        list: [1],
+        currentTime:0,
+        process:0
     },
     mutations: {
         setBillList(state, payload) {
             state.list = payload.list
+        },
+        setCurrentTime(state,payload){
+            state.currentTime=payload.currentTime
+        },
+        setProcess(state,payload){
+            state.process=payload.process
         }
     },
 

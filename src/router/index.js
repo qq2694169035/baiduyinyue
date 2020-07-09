@@ -45,6 +45,15 @@ const routes = [
 
         },
             {
+                path: "Singerdetails/:tingup",
+                component: () => import('../views/Singerdetails'),
+                meta:{
+                    title:"歌手"
+                }
+
+
+            },
+            {
                 //this.$route.params.type
                 path: "more/:type/:title",
                 component: () => import('../views/Moremusic.vue'),
@@ -54,6 +63,13 @@ const routes = [
     {
         path:"/bofang/:songId",
         component: ()=>import('../views/bofang.vue')
+    },
+    {
+        path:"/details/:type",
+        component: ()=>import('../views/Detail.vue'),
+        meta:{
+            title:"歌手"
+        }
     }
 
 

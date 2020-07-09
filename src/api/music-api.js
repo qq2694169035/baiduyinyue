@@ -34,3 +34,36 @@ export function getSingerList(tinguid) {
             }
         })
     }
+
+
+
+
+export function getLrc(lrc) {
+    const url=`/data/song/lrc?lrc_link=${lrc}`;
+    return request.get(url).then(res=>{
+        return{
+            ...res,
+            list:res
+        }
+    })
+}
+
+export function getsearch(content) {
+    const url=`/v1/restserver/ting?method=baidu.ting.search.catalogSug&query=${content}`;
+    return request.get(url).then(res=>{
+        return{
+            ...res,
+            list:res
+        }
+    })
+}
+
+export function getSinger(tinguid) {
+    const url=`/v1/restserver/ting?method=baidu.ting.artist.getSongList&limits=10&tinguid=${tinguid}`;
+    return request.get(url).then(res=>{
+        return{
+            ...res,
+            list:res
+        }
+    })
+}

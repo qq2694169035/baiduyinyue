@@ -2,7 +2,7 @@
     <div>
         <div style="position: fixed; top: 0;left: 0;right: 0;bottom: 0;background-color:#f5f5f5;z-index: -1"></div>
         <Header></Header>
-        <img :src="list.pic_big" class="pic" :class="rotate1==true?'route':''">
+        <img :src="list.pic_big" class="pic route"    :style="rotate1?'animation-play-state:running': 'animation-play-state: paused;' ">
         <Lrc></Lrc>
         <Action :download="bitrate.file_link"></Action>
         <div class="bofang-container">
